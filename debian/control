@@ -1,0 +1,18 @@
+Source: authelia
+Section: net
+Priority: optional
+Maintainer: Aos Dabbagh <aosdab@gmail.com>
+Build-Depends:
+ debhelper (>= 11),
+ yarnpkg,
+ nodejs,
+Standards-Version: 4.5.0
+Homepage: https://github.com/authelia/authelia
+
+Package: authelia
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: SSO
+ SSO
