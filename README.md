@@ -18,14 +18,6 @@ user@hostname$ ./build.sh -i golang:1.16-3-stretch -v 4.28.0
 ```
 Don't forget to update `debian/changelog` so your package is generated with the correct version.
 
-## Release
-
-To publish a new package version to Github, follow these steps:
-  * update the `VERSION` variable in `build.sh`
-  * add a new entry in `debian/changelog`
-  * create a new tag with the Debian package version
-
-
 ## References
 
 * [ayosec/polybar-debian](https://github.com/ayosec/polybar-debian)
