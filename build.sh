@@ -4,7 +4,7 @@ set -eu
 
 IMAGE="golang:1.16-buster"
 TARGET="$(dirname "$0" | xargs realpath)"
-VERSION="v4.29.0"
+VERSION="4.29.0"
 
 while getopts "v:i:h" opt
 do

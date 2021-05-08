@@ -2,7 +2,7 @@
 
 set -xeu
 
-BRANCH="$VERSION"
+BRANCH="v$VERSION"
 DEBIAN_FRONTEND=noninteractive
 DEB_BUILD_OPTIONS=parallel=$(nproc)
 OS_VERSION=$(sed 's/\..*//' /etc/debian_version)
@@ -18,6 +18,8 @@ get_sources() {
     cd "$(mktemp -d)"
     git clone -b "$BRANCH" https://github.com/authelia/authelia.git authelia
     cd authelia
+    sed -i "s/__BUILD_TAG__/v$VERSION/" cmd/authelia/constants.go
+    sed -i "s/__BUILD_COMMIT__/$(git rev-parse --verify v$VERSION)/" cmd/authelia/constants.go
 }
 
 build() {

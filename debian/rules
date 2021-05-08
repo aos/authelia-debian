@@ -14,20 +14,7 @@ override_dh_auto_build:
 	cp -R api internal/server/public_html/
 	go build -ldflags '-w' -trimpath -o authelia cmd/authelia/*.go
 
-
-#override_dh_auto_install:
-#	mkdir -p debian/authelia/usr/share/man/man1/
-#	help2man "target/release/authelia" | gzip > "debian/authelia/usr/share/man/man1/authelia.1.gz"
-#	install -Dm04755 "target/release/authelia" "debian/authelia/usr/bin/authelia"
-#	install -Dm0644 "extra/completions/authelia.bash" "debian/authelia/usr/share/bash-completion/completions/authelia"
-#	install -Dm0644 "extra/completions/authelia.fish" "debian/authelia/usr/share/fish/completions/authelia.fish"
-#	install -Dm0644 "extra/completions/_authelia" "debian/authelia/usr/share/vendor-completions/_authelia"
-#	install -Dm0644 "extra/logo/authelia-term.svg" "debian/authelia/usr/share/pixmaps/com.authelia.authelia.svg"
-#	install -Dm0644 "extra/linux/authelia.desktop" "debian/authelia/usr/share/applications/com.authelia.authelia.desktop"
-#	sed -i 's/Icon=authelia/Icon=com.authelia.authelia/g' "debian/authelia/usr/share/applications/com.authelia.authelia.desktop"
-#
-#override_dh_installexamples:
-#	dh_installexamples "authelia.yml"
-#
-#override_dh_compress:
-#	dh_compress -Xexamples
+override_dh_auto_install:
+	install -Dm04755 "authelia" "debian/authelia/usr/bin/authelia"
+	install -Dm04755 "authelia.service" "debian/authelia/usr/lib/systemd/system/authelia.service"
+	install -Dm04755 "config.template.yml" "debian/authelia/etc/authelia/configuration.yml"

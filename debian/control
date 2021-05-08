@@ -14,5 +14,4 @@ Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
-Description: SSO
- SSO
+Description: The Cloud ready multi-factor authentication portal for your Apps.
