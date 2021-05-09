@@ -1,1 +1,4 @@
 target/*.deb
+.envrc
+.idea/
+*.swp

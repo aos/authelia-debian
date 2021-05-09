@@ -4,6 +4,8 @@ This repository contains the source to build a Debian package for [authelia](htt
 
 ## Usage
 
+On Mac? Install prerequisites: `brew install findutils coreutils`
+
 If you have [Docker](https://www.docker.com/) installed locally, just run the following:
 
 ```bash
